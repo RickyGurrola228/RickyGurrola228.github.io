@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página con GIF, Transparencia, Opacidad y Formulario</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 0, 0, 0.8); /* Fondo blanco con transparencia */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(8, 217, 228, 0.1);
+        }
+
+        .gif-box {
+            margin-bottom: 20px;
+        }
+
+        .gif-box img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            opacity: 0.9; /* Efecto de opacidad */
+        }
+
+        .form-box {
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .form-box form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-box input {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-box button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .form-box button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="gif-box">
+            <img src="boxeo.gift" alt="GIF de Boxeo">
+        </div>
+        <div class="form-box">
+            <form action="#" method="POST">
+                <input type="text" name="nombre" placeholder="Nombre" required>
+                <input type="email" name="email" placeholder="Correo Electrónico" required>
+                <input type="password" name="password" placeholder="Contraseña" required>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

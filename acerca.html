@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Máscara Pentagonal y Mostrar/Ocultar con Display</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #e6fb04;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            width: 100%;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: left;
+        }
+        .masked-image {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px; 
+            margin-bottom: 20px;
+            clip-path: url(#pentagon-mask);
+        }
+        .info {
+            display: none;
+            margin-top: 10px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .s-info {
+            display: block;
+        }
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #2e6a8b;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #202478;
+        }
+
+        @media (max-width: 600px) {
+            .info {
+                padding: 10px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .info {
+                padding: 8px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img class="masked-image" src="ring.jpg" alt="menucss.html">
+        <svg width="0" height="0" style="position: absolute;">
+            <defs>
+                <clipPath id="pentagon-mask">
+                    <polygon points="100,10 190,50 165,150 35,150 10,50" class="shape" />
+                </clipPath>
+            </defs>
+        </svg>
+        <button class="button" onclick="toggleInfo()">Mostrar Información</button>
+        <button class="button" onclick="window.location.href ='menucss.html'">Regresar al Menú</button>
+        <div class="info" id="info">
+            <h2>Acerca de MMA</h2>
+            <p>Las Artes Marciales Mixtas (MMA) son una disciplina de combate que ha ganado popularidad en el mundo del deporte. También conocida como “vale todo”, las MMA combinan diversas técnicas de lucha y artes marciales para crear un deporte emocionante y competitivo. En este artículo, descubre todo lo que necesitas saber sobre las MMA, desde su origen hasta las reglas del deporte y los famosos luchadores que lo practican. ¡No te lo pierdas!.</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleInfo() {
+            var info = document.getElementById('info');
+            info.classList.toggle('s-info');
+        }
+    </script>
+</body>
+</html>

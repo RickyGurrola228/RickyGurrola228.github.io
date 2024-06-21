@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Imagen con Mask</title>
+    <style>
+        .masked-image {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body bgcolor="EBF52A">
+    <center><h3>PAGINA BOXEO Y MMA</h3></center>
+    <center><img class="masked-image" src="descarga.jpg" alt="Imagen" style="clip-path: url(#triangle-mask);"></center>
+
+
+    <svg width="0" height="0" style="position: absolute;">
+        <defs>
+            <clipPath id="triangle-mask">
+                <polygon points="100, 20 20, 180 180, 180" />
+            </clipPath>
+        </defs>
+    </svg>
+  
+   <center><img class="masked-image" src="ISLAM.jpg" alt="Imagen" style="clip-path: url(#square-mask);"></center>
+ 
+
+    <svg width="0" height="0" style="position: absolute;">
+        <defs>
+            <clipPath id="square-mask">
+                <rect x="0" y="0" width="200" height="200" />
+            </clipPath>
+        </defs>
+    </svg>
+    <br><br>
+    <a href="menucss.html"><h1><center>CONTINUAR...</center></h1></a>
+   
+    
+   
+</body>
+</html>
+
